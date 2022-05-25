@@ -149,7 +149,7 @@ function moveAliens() {
       mainSound.pause()
       // gameOver()
       gameOverSound.addEventListener('ended', function () {
-        // gameOver()
+        gameOver()
       })
     }
   }
@@ -162,3 +162,25 @@ function startAlienLeft() {
   }, intervalSpeed)
 }
 startAlienLeft()
+
+// GAME OVER function 
+
+function gameOver() {
+  clearInterval(interval)
+  const y = document.getElementById('gameover-screen')
+  if (y.style.display === 'none') {
+    y.style.display = 'block'
+  } else {
+    y.style.display = 'none'
+  }
+  setTimeout(() => {
+    y.style.display = 'none'
+    const aliens = [0, 2, 4, 6, 8, 10, 12]
+
+    function drawAliens() {
+      const squares = Array.from(document.querySelectorAll('.grid div'))
+      aliens.forEach((alien) => squares[alien].classList.add('alien'))
+    }
+    drawAliens()
+  }, 8000)
+}

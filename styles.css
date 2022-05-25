@@ -11,28 +11,10 @@
   left: 410px;
 }
 
-#gamestart-screen {
-  margin: auto;
-  margin-top: 150px;
-  position: relative;
-  width: 50%;
-  height: 50%;
-  background-color: black;
-  color: rgb(22, 164, 27);
-  text-align: center;
-  border: 8px solid;
-  border-radius: 10px;
-  box-shadow: 0 1px 32px white;
-  transform: rotate(0) scale(0);
-  animation: grow-and-shrink 700ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: ease-in-out;
-  display: flex;
-}
 
 #gameover-screen {
   margin: auto;
-  margin-top: 50px;
+  margin-top: 200px;
   position: relative;
   background-color: black;
   color: rgb(22, 164, 27);
@@ -44,13 +26,14 @@
   animation: grow-and-shrink 700ms;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
-  display: flex;
+  /* display: flex; */
   position: absolute;
   top: 470px;
-  left: 920px;
+  left: 950px;
   display: none;
   width: 300px;
 }
+
 
 @keyframes grow-and-shrink {
   0% {
