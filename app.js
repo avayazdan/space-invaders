@@ -17,4 +17,11 @@ const squares = Array.from(document.querySelectorAll('.grid div'))
 
 console.log(squares)
 
+// adding ALIENS
 
+const aliens = [0, 2, 4, 6, 8, 10, 12]
+
+function drawAliens() {
+  aliens.forEach((alien) => squares[alien].classList.add('alien'))
+}
+drawAliens()
