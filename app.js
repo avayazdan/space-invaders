@@ -101,3 +101,64 @@ const bulletTravel = setInterval(() => {
     }
   })
 }, 1000)
+
+// movement variables
+
+let moveRight = true
+let direction = 1
+let interval
+let intervalSpeed = 500
+const gameOverSound = new Audio('audio/gameover.mp3')
+const mainSound = new Audio('audio/loop.mp3')
+const bruhSound = new Audio('audio/bruh.mp3')
+
+
+// moving & removing ALIENS
+
+
+function removeAliens() {
+  squares.forEach((square) => square.classList.remove('alien'))
+}
+
+function moveAliens() {
+  const leftEdge = aliens[0] % width === 0
+  const rightEdge = aliens[aliens.length - 1] % width === width - 1
+  removeAliens()
+  if (moveRight && rightEdge) {
+    for (let i = 0; i < aliens.length; i++) {
+      aliens[i] += width
+      direction = -1
+      moveRight = false
+    }
+  } else if (!moveRight && leftEdge) {
+    for (let i = 0; i < aliens.length; i++) {
+      aliens[i] += width
+      direction = 1
+      moveRight = true
+    }
+  } else {
+    for (let i = 0; i < aliens.length; i++) {
+      aliens[i] += direction
+    }
+  }
+  drawAliens()
+  if (aliens.some((alien) => alien > 182)) {
+    if (aliens.some((alien) => alien > 182)) {
+      gameOverSound.play()
+      bruhSound.play()
+      mainSound.pause()
+      // gameOver()
+      gameOverSound.addEventListener('ended', function () {
+        // gameOver()
+      })
+    }
+  }
+}
+
+function startAlienLeft() {
+  console.log('move left')
+  interval = setInterval(function () {
+    moveAliens(-1)
+  }, intervalSpeed)
+}
+startAlienLeft()
