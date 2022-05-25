@@ -1,0 +1,144 @@
+* {
+  cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur815.ani),
+    url(https://cur.cursors-4u.net/cursors/cur-9/cur815.png), auto !important;
+}
+
+.container-start {
+  width: 300x;
+  height: 400px;
+  position: absolute;
+  top: 370px;
+  left: 410px;
+}
+
+#gamestart-screen {
+  margin: auto;
+  margin-top: 150px;
+  position: relative;
+  width: 50%;
+  height: 50%;
+  background-color: black;
+  color: rgb(22, 164, 27);
+  text-align: center;
+  border: 8px solid;
+  border-radius: 10px;
+  box-shadow: 0 1px 32px white;
+  transform: rotate(0) scale(0);
+  animation: grow-and-shrink 700ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  display: flex;
+}
+
+#gameover-screen {
+  margin: auto;
+  margin-top: 50px;
+  position: relative;
+  background-color: black;
+  color: rgb(22, 164, 27);
+  text-align: center;
+  border: 8px solid;
+  border-radius: 10px;
+  box-shadow: 0 1px 32px white;
+  transform: rotate(0) scale(0);
+  animation: grow-and-shrink 700ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  display: flex;
+  position: absolute;
+  top: 470px;
+  left: 920px;
+  display: none;
+  width: 300px;
+}
+
+@keyframes grow-and-shrink {
+  0% {
+    transform: scale(1);
+  }
+  0% {
+    transform: scale(1.5);
+  }
+  0% {
+    transform: scale(1);
+  }
+}
+
+.h2 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h2 {
+  justify-content: center;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+.grid {
+  width: 1000px;
+  height: 745px;
+  border: inset green 10px;
+  padding-top: 7px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0 1px 32px purple;
+}
+
+.grid div {
+  width: 70px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-image: url('images/background.gif');
+  font-family: 'Bungee Outline', cursive;
+  font-size: 25px;
+  margin: 0px;
+  height: 100%;
+}
+
+#score {
+  color: silver;
+}
+
+.score {
+  color: white;
+  text-align: center;
+  padding-bottom: 20px;
+  color: green;
+  font-size: 40px;
+}
+
+.alien {
+  background-image: url('/images/alienpurple.png');
+  width: 50px;
+  height: 50px;
+}
+
+.blasted {
+  background-image: red;
+}
+
+.shooter {
+  background-image: url('/images/shooter.gif');
+}
+
+.bullet {
+  background-image: url('/images/skullbullet.png');
+}
