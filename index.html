@@ -14,9 +14,16 @@
 
 <body>
   <script src="app.js" defer></script>
+  <div class="header-container">
   <h1><img src="images/title.png" alt="space-invaders-title" /></h1>
+  </div>
 
-  <audio id="audio" controls style="display: none"></audio>
+  <div class="audio-container">
+  <audio controls>
+    <source src="audio/loop.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+  </audio>
+  </div>
   <div id="game-info">
     <div class="score">score: <span id="score">0</span></div>
   </div>
