@@ -79,6 +79,10 @@ h1 {
   text-align: center;
 }
 
+h3 {
+  color: green;
+  text-align: center;
+}
 .container {
   display: flex;
   flex-direction: column;
@@ -114,14 +118,14 @@ body {
 }
 
 #score {
-  color: silver;
+  color: rgb(170, 55, 196);
 }
 
 .score {
   color: white;
   text-align: center;
   padding-bottom: 20px;
-  color: green;
+  color: rgb(170, 55, 196);
   font-size: 40px;
 }
 
@@ -149,8 +153,8 @@ body {
   margin-bottom: 50px;
 }
 
-audio {
-  /* filter: sepia(20%) saturate(70%) grayscale(1) contrast(99%) invert(12%); */
-  /* width: 200px;
-  height: 25px; */
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+  background-color: green;
+
 }
