@@ -184,3 +184,14 @@ function gameOver() {
     drawAliens()
   }, 8000)
 }
+
+// stop SPACEBAR from scrolling page
+
+document.onkeypress = function (e) {
+  e = e || window.event
+  var charCode = e.keyCode || e.whichf
+  if (charCode === 32) {
+    e.preventDefault()
+    return false
+  }
+}

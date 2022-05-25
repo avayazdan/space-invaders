@@ -65,6 +65,7 @@ h1 {
 h3 {
   color: green;
   text-align: center;
+  font-size: 27px;
 }
 .container {
   display: flex;
@@ -98,6 +99,17 @@ body {
   font-size: 25px;
   margin: 0px;
   height: 100%;
+}
+
+.about-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+p {
+  color: white;
+  text-align: center;
 }
 
 #score {
