@@ -26,7 +26,7 @@ function drawAliens() {
 }
 drawAliens()
 
-// shooter variables
+// SHOOTER variables
 
 let shooterIndex = 188
 const audioShoot = new Audio('audio/shoot.mp3')
@@ -38,7 +38,7 @@ function drawShooter() {
 }
 drawShooter()
 
-// moving shooter
+// moving SHOOTER
 
 function moveShooter(e) {
   console.log(e)
@@ -67,3 +67,37 @@ function moveShooter(e) {
 }
 
 document.addEventListener('keydown', moveShooter)
+
+// SCORE variables
+
+let score = 0
+const scoreBoard = document.querySelector('#score')
+
+// BULLET travel and SCORE FUNCTIONALITY
+
+const bulletTravel = setInterval(() => {
+  squares.forEach((square) => {
+    if (
+      square.classList.contains('bullet') &&
+      square.classList.contains('alien')
+    ) {
+      square.classList.remove('bullet')
+      square.classList.remove('alien')
+      const squareNumber = parseInt(square.getAttribute('squareNumber'))
+      aliens.splice(aliens.indexOf(squareNumber), 1)
+      console.log(aliens)
+      console.log(squareNumber)
+      score += 10
+      scoreBoard.textContent = score
+    }
+    if (square.classList.contains('bullet')) {
+      const bulletIndex = squares.indexOf(square)
+      if (bulletIndex > width) {
+        squares[bulletIndex].classList.remove('bullet')
+        squares[bulletIndex - width].classList.add('bullet')
+      } else {
+        squares[bulletIndex].classList.remove('bullet')
+      }
+    }
+  })
+}, 1000)
