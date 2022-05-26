@@ -6,7 +6,7 @@ Deployed at: [https://gracious-goldstine-fb23a8.netlify.app/](https://space-inva
 
 (This project is not suitable for mobile devices)
 
-This project was built for project two of General Assembly's Full-Stack Software Engineering course. 
+This project was built for project one of General Assembly's Full-Stack Software Engineering course. 
 The project brief's focus was to create a single-page game using HTML, CSS and JavaScript. This project was representative of our first module.
 The main focus for this project was to use the DOM and to create a game. 
 For this project, we were given a list of games to choose from for inspiration, I decided to go for Space Invaders.
@@ -32,24 +32,28 @@ There are a row of aliens that move down in a synchronised motion towards the sh
 The game mechnanics heavily rely on the grid. The aliens move to each div in the grid which is set to an array. 
 
 ```
-async function fetchClassInfo(randomClass) {
-    const respFour = await fetch(`https://www.dnd5eapi.co/api/classes/${randomClass.index}`)
-    const classInfo = await respFour.json()
-    updateClassInfo(classInfo)
-    displayClassInfoFunction(classInfo)
-    hitDieDisplay(classInfo)
-  }
-  //fetching individual race information
-  async function fetchRaceInfo(randomRace) {
-    const respFive = await fetch(`https://www.dnd5eapi.co/api/races/${randomRace.index}`)
-    const raceInfo = await respFive.json()
-    updateRaceInfo(raceInfo)
-  }
-  async function fetchSkillInfo(randomSkill) {
-    const respSix = await fetch(`https://www.dnd5eapi.co/api/skills/${randomSkill.index}`)
-    const skillInfo = await respSix.json()
-    updateSkillInfo(skillInfo)
-  }
+// creating GRID
+
+for (let i = 0; i < width * height; i++) {
+  const square = document.createElement('div')
+  square.setAttribute('squareNumber', i)
+  myGrid.appendChild(square)
+}
+const grid = document.querySelectorAll('.grid div')
+console.log(grid)
+const squares = Array.from(document.querySelectorAll('.grid div'))
+
+console.log(squares)
+
+// adding ALIENS
+
+const aliens = [0, 2, 4, 6, 8, 10, 12]
+
+function drawAliens() {
+  aliens.forEach((alien) => squares[alien].classList.add('alien'))
+}
+drawAliens()
+
 ```
 
 Our next step was to be able to return a random character, which we tackled by using the <font color="blue">**Math.random()**</font> function. 
