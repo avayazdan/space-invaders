@@ -94,7 +94,7 @@ I wanted to keep the styling of this game very retro and simple, and it ended up
 
 #### Challenges
 
-There were many challanges during this project as I had covid for the first week and so I only had one week to complete it. 
+There were many challenges during this project as I had covid for the first week and so I only had one week to complete it. 
 In terms of technical challanges, a big one was music and autoplay. Originally, the sound would automatically start when the user would move their mouse, this was a way to bypass Chrome's rules on music not starting automatically on webpages for the user's comfort and safety. By using the mouse-move event listener I was able to make the music somewhat play automatically, and then stop once the user lost the game. However, this dead not always work, and Chrome would throw a different error - "the user failed to interact with the document first" - because of this, I decided to add a player, I also did this because it's somewhat more user friendly and better to have the option there instead of it being played automatically. 
 
 #### Future improvememts 
