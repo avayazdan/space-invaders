@@ -1,1 +1,102 @@
-# space-invaders
+# PROEJECT 1 - SPACE INVADERS
+
+![spae](https://user-images.githubusercontent.com/75817925/170392140-74fa34b6-51ee-4105-bd73-5caa5a51101a.png)
+
+Deployed at: [https://gracious-goldstine-fb23a8.netlify.app/](https://space-invaders-1337.netlify.app/)
+
+(This project is not suitable for mobile devices)
+
+This project was built for project two of General Assembly's Full-Stack Software Engineering course. 
+The project brief's focus was to create a single-page game using HTML, CSS and JavaScript. This project was representative of our first module.
+The main focus for this project was to use the DOM and to create a game. 
+For this project, we were given a list of games to choose from for inspiration, I decided to go for Space Invaders.
+
+
+### Table of contents 
+
+1. How it works
+3. Build
+4. Styling
+5. Challenges and Wins
+6. Future improvements
+
+#### How it works
+
+There are a row of aliens that move down in a synchronised motion towards the shooter (player) the shooter can press left and right arrow keys to move left and right, and space bar to shoot. The shooter must hit each "block" of aliens twice for them to be completely removed or, destroyed, in the context of the game. Once the aliens get to the bottom of the page, the player will lose and a losing sound will be played. The game keeps a track of the player's score - each successful hit equals 10 points. The game is one round, to play again the user must refresh the page. 
+
+![dldl](https://user-images.githubusercontent.com/75817925/170390652-e33ad016-d015-43bc-b5b5-22214dc5a394.png)
+
+
+#### Build
+
+The game mechnanics heavily rely on the grid. The aliens move to each div in the grid which is set to an array. 
+
+```
+async function fetchClassInfo(randomClass) {
+    const respFour = await fetch(`https://www.dnd5eapi.co/api/classes/${randomClass.index}`)
+    const classInfo = await respFour.json()
+    updateClassInfo(classInfo)
+    displayClassInfoFunction(classInfo)
+    hitDieDisplay(classInfo)
+  }
+  //fetching individual race information
+  async function fetchRaceInfo(randomRace) {
+    const respFive = await fetch(`https://www.dnd5eapi.co/api/races/${randomRace.index}`)
+    const raceInfo = await respFive.json()
+    updateRaceInfo(raceInfo)
+  }
+  async function fetchSkillInfo(randomSkill) {
+    const respSix = await fetch(`https://www.dnd5eapi.co/api/skills/${randomSkill.index}`)
+    const skillInfo = await respSix.json()
+    updateSkillInfo(skillInfo)
+  }
+```
+
+Our next step was to be able to return a random character, which we tackled by using the <font color="blue">**Math.random()**</font> function. 
+
+```
+  function generateCharacter() {
+    randomClass = classes.results[Math.floor(Math.random() * classes.results.length)]
+    fetchClassInfo(randomClass)
+    displayingClassImg(randomClass)
+    updateRandomClass(randomClass)
+
+    randomRace = races.results[Math.floor(Math.random() * races.results.length)]
+    fetchRaceInfo(randomRace)
+    updateRandomRace(randomRace)
+
+    randomSkill = skills.results[Math.floor(Math.random() * skills.results.length)]
+    fetchSkillInfo(randomSkill)
+    updateRandomSkill(randomSkill)
+  }
+  }
+```
+
+The main logic in this project is wihin our generator which is the code we exanded above.  
+
+#### Styling
+
+I wanted to keep the styling of this game very retro and simple, and it ended up being sort of an hommage to the early days of the internet and old HTML. I was inspired by pixel art, arcade games and 8bit music.
+
+
+![gme](https://user-images.githubusercontent.com/75817925/170392166-0f9ef396-1c92-4e7b-af50-438a461274d1.png)
+
+
+#### Challenges and Wins
+
+There were many challanges during this project as I had covid for the first week and so I only had one week to complete it. 
+In terms of technical challanges, a big one was music and autoplay. Originally, the sound would automatically start when the user would move their mouse, this was a way to bypass Chrome's rules on music not starting automatically on webpages for the user's comfort and safety. By using the mouse-move event listener I was able to make the music somewhat play automatically, and then stop once the user lost the game. However, this dead not always work, and Chrome would throw a different error - "the user failed to interact with the document first" - because of this, I decided to add a player, I also did this because it's somewhat more user friendly and better to have the option there instead of it being played automatically. 
+
+#### Future improvememts 
+
+The game is extremely simple and is missing a lot of functionality, thus I aim to add the following:
+
+- Add starting and game over screen
+- Add win function
+- Add restart game when it ends functionality
+- Make page responsive
+
+
+
+
+
