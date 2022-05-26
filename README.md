@@ -2,9 +2,9 @@
 
 ![spae](https://user-images.githubusercontent.com/75817925/170392140-74fa34b6-51ee-4105-bd73-5caa5a51101a.png)
 
-Deployed at: (https://space-invaders-1337.netlify.app/)
+Deployed at: https://space-invaders-1337.netlify.app/
 
-(This project is not suitable for mobile devices)
+<i>(This project is not suitable for mobile devices)</i>
 
 This project was built for project one of General Assembly's Full-Stack Software Engineering course. 
 The project brief's focus was to create a single-page game using HTML, CSS and JavaScript. This project was representative of our first module.
@@ -24,7 +24,7 @@ For this project, we were given a list of games to choose from for inspiration, 
 
 There are a row of aliens that move down in a synchronised motion towards the shooter (player) the shooter can press left and right arrow keys to move left and right, and space bar to shoot. The shooter must hit each "block" of aliens twice for them to be completely removed or, destroyed, in the context of the game. Once the aliens get to the bottom of the page, the player will lose and a losing sound will be played. The game keeps a track of the player's score - each successful hit equals 10 points. The game is one round, to play again the user must refresh the page. 
 
-*Please note the readability of the instructions are skewed due to the image resolution.
+<i>Please note the readability of the instructions are skewed due to the image resolution.</i>
 
 ![dldl](https://user-images.githubusercontent.com/75817925/170390652-e33ad016-d015-43bc-b5b5-22214dc5a394.png)
 
