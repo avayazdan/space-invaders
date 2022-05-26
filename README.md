@@ -24,6 +24,8 @@ For this project, we were given a list of games to choose from for inspiration, 
 
 There are a row of aliens that move down in a synchronised motion towards the shooter (player) the shooter can press left and right arrow keys to move left and right, and space bar to shoot. The shooter must hit each "block" of aliens twice for them to be completely removed or, destroyed, in the context of the game. Once the aliens get to the bottom of the page, the player will lose and a losing sound will be played. The game keeps a track of the player's score - each successful hit equals 10 points. The game is one round, to play again the user must refresh the page. 
 
+*Please note the readability of the instructions are skewed due to the image resolution.
+
 ![dldl](https://user-images.githubusercontent.com/75817925/170390652-e33ad016-d015-43bc-b5b5-22214dc5a394.png)
 
 
@@ -56,27 +58,31 @@ drawAliens()
 
 ```
 
-Our next step was to be able to return a random character, which we tackled by using the <font color="blue">**Math.random()**</font> function. 
+The movement relies on the width of the grid, as shown below. 
 
 ```
-  function generateCharacter() {
-    randomClass = classes.results[Math.floor(Math.random() * classes.results.length)]
-    fetchClassInfo(randomClass)
-    displayingClassImg(randomClass)
-    updateRandomClass(randomClass)
-
-    randomRace = races.results[Math.floor(Math.random() * races.results.length)]
-    fetchRaceInfo(randomRace)
-    updateRandomRace(randomRace)
-
-    randomSkill = skills.results[Math.floor(Math.random() * skills.results.length)]
-    fetchSkillInfo(randomSkill)
-    updateRandomSkill(randomSkill)
-  }
+function moveAliens() {
+  const leftEdge = aliens[0] % width === 0
+  const rightEdge = aliens[aliens.length - 1] % width === width - 1
+  removeAliens()
+  if (moveRight && rightEdge) {
+    for (let i = 0; i < aliens.length; i++) {
+      aliens[i] += width
+      direction = -1
+      moveRight = false
+    }
+  } else if (!moveRight && leftEdge) {
+    for (let i = 0; i < aliens.length; i++) {
+      aliens[i] += width
+      direction = 1
+      moveRight = true
+    }
+  } else {
+    for (let i = 0; i < aliens.length; i++) {
+      aliens[i] += direction
+    }
   }
 ```
-
-The main logic in this project is wihin our generator which is the code we exanded above.  
 
 #### Styling
 
@@ -99,8 +105,6 @@ The game is extremely simple and is missing a lot of functionality, thus I aim t
 - Add win function
 - Add restart game when it ends functionality
 - Make page responsive
-
-
-
+- Small styling improvements
 
 
